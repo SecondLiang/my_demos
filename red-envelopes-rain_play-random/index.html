@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随机数应用（抢红包）</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .warp{
+            width: 350px;
+            height: 550px;
+            margin-left:50%;
+            margin-top: 200px;
+            transform: translateX(-50%);
+            background-color: rgb(255, 72, 0);
+            opacity: 0.7;
+            position: relative;
+            overflow: hidden;
+        }
+        .header{}
+        .left,.right{
+            position: absolute;
+            top:10px;
+            width: 70px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: red;
+            color: yellow;
+            text-align: center;
+            line-height: 30px;
+        }
+        .left{
+           left: 10px;
+        }
+        .right{
+            right:10px;
+        }
+        .hb{
+            width: 60px;
+            height: 45px;
+            background-color: red;
+            border-radius:5px;
+            position: absolute;
+            top: 300px;
+            z-index: 10;
+            cursor: pointer;
+        }
+        .san{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0px;
+            height: 0px;
+            border: 0px solid transparent;
+            border-top-color: yellow;
+            border-left-width:30px;
+            border-right-width:30px;
+            border-top-width:20px;
+            border-bottom-width:20px;
+            z-index: 20;
+        }
+        .jin{
+            color: rgba(209, 49, 49,0);
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 45px;
+            position: absolute;
+            z-index: 50;
+        }
+        .showEnd{
+            width: 100%;
+            text-align: center;
+            color: red;
+            text-shadow: 1px 1px 1px yellow;
+            font-size: 38px;
+            font-weight: bolder;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>  
+    <div class="warp">
+        <div class="header">
+            <div class="left">20s</div>
+            <div class="right">0.00</div>
+            <div class="showEnd">888</div>
+        </div>
+
+    </div>
+    <script>
+        (function(){
+            var warp = document.getElementsByClassName('warp')[0];
+            var left = document.getElementsByClassName('left')[0];
+            var right = document.getElementsByClassName('right')[0];
+            var tiShi = document.getElementsByClassName('showEnd')[0];
+            var hB = document.getElementsByClassName('hb');
+            var time = 10;
+            var len;
+            var creatT = setInterval(function(){
+                var Odiv = document.createElement('div');
+                var Osan = document.createElement('div');
+                var Ospan = document.createElement('span');
+                Odiv.setAttribute('class','hb');
+                Osan.setAttribute('class', 'san');
+                Ospan.setAttribute('class', 'jin');
+                Odiv.style.left = parseInt(Math.random() * ((350 - 70) - 10) ) + 10 + 'px';
+                Odiv.style.top = -55 + 'px';
+                Odiv.style.transform = 'rotateZ(' + parseInt(Math.random() * 40 - 20) + 'deg)'
+                Ospan.innerHTML = (Math.random() * 2).toFixed(2);
+                Odiv.appendChild(Osan);
+                Odiv.appendChild(Ospan);
+                warp.appendChild(Odiv);
+                move(Odiv);
+            },parseInt(Math.random()) * 200 + 400)
+
+             var Dtime = setInterval(function(){
+                time--;
+                left.innerHTML = time + 's';
+                if(time == 0){
+                    clearInterval(creatT);
+                    clearInterval(Dtime);
+                }
+            },1000)
+
+
+            function move(ele){
+                var timer = setInterval(function(){
+                    ele.style.top = parseInt(ele.style.top) + 3 + 'px';
+                    if(parseInt(ele.style.top) >= 560){
+                        clearInterval(timer);
+                        ele.parentNode.removeChild(ele);
+                       var len = hB.length;
+                       if(len == 0){
+                           tiShi.style.display = 'block';
+                           tiShi.innerHTML = '抢了' + right.innerHTML;
+                       }
+                    }
+                },16)
+                
+            }
+            bindEvent();
+            function bindEvent(){
+                var money = 0;
+                warp.addEventListener('click',function(e){
+                    var target = e.target;
+                    if(target.className == 'jin'){
+                        money += parseFloat(target.innerHTML);
+                        right.innerHTML = money.toFixed(2);
+                    }
+                })
+            }
+
+        })()
+    </script>
+</body>
+</html>

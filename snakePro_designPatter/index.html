@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .desc_warp{
+            width: 400px;
+            height: 200px;
+            background-color: #ccc;
+            position: fixed;
+            left: 50%;
+            top: 10%;
+            transform: translateX(-50%);
+            box-shadow: 2px 2px 2px 2px #ccc;
+        }
+        h2{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .grade{
+            width: 80%;
+            list-style: none;
+            margin-top:30px;
+            font-size: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .grade li{
+            width: 33.333%;
+            float: left;
+            text-align: center;
+        }
+        .btn{
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: orange;
+            font-weight: 700;
+            font-size: 20px;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="desc_warp">
+        <h2>贪吃蛇小游戏</h2>
+        <ul class="grade">
+            <li>
+                <label for="i1"><input id="i1" type="radio" name="1" value="1" checked >易</label>
+            </li>
+            <li>
+                <label for="i2"><input id="i2" type="radio" name="1" value="2" >简</label>
+            </li>
+            <li>
+                <label for="i3"> <input id="i3" type="radio" name="1" value="3" >难</label>
+            </li>
+        </ul>
+        <div class="btn-box">
+            <span class="btn">开 始</span>
+        </div>
+    </div>
+
+
+
+    <script src="./src/js/toolUtil.js"></script>
+    <script src="./src/js/initVar.js"></script>
+    <script src="./src/js/factory.js"></script>
+    <script src="./src/js/ground.js"></script>
+    <script src="./src/js/snake.js"></script>
+    <script src="./src/js/game.js"></script>
+</body>
+</html>

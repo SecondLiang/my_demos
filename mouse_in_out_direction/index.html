@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .warpper {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            margin-left: -100px;
+            perspective: 600px;
+        }
+
+        .item-box {
+            transform-style: preserve-3d;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: all 1s;
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+        }
+
+        .qian {
+            background-image: url(logo2.jpg);
+            background-size:cover;
+            transform: rotate3d(0,1,0,0deg) translate3d(0,0,100px);
+        }
+
+        .hou {
+            background-color: black;
+            transform:rotate3d(0,1,0,180deg) translate3d(0,0,100px);
+        }
+
+        .left {
+            background-color: green;
+            transform:rotate3d(0,1,0,-90deg) translate3d(0,0,100px);
+        }
+
+        .right {
+            background-color: blue;
+            transform:rotate3d(0,1,0,90deg) translate3d(0,0,100px) ;
+        }
+
+        .top {
+            background-color: yellow;
+            transform:rotate3d(1,0,0,90deg) translate3d(0,0,100px) ;
+        }
+
+        .buttom {
+            background-color: orange;
+            transform:rotate3d(1,0,0,-90deg) translate3d(0,0,100px) ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="warpper">
+        <div class="item-box">
+            <div class="item qian"></div>
+            <div class="item hou">后</div>
+            <div class="item left">左</div>
+            <div class="item right">右</div>
+            <div class="item top">上</div>
+            <div class="item buttom">下</div>
+        </div>
+    </div>
+
+    <script>
+
+        (function(){
+            var warp = document.getElementsByClassName('warpper')[0];
+            var itemBox = document.getElementsByClassName('item-box')[0];
+            bindEvent();
+            function bindEvent(){
+                 warp.addEventListener('mouseenter', function (e) {
+                    var d = getDirection(e);
+                    var dir = move(d);
+                    console.log(dir);
+                    
+                })
+                warp.addEventListener('mouseleave',function(e){
+                    var d = getDirection(e);
+                    var dir = move('-'+d);
+                    console.log(dir);
+                })
+            }
+            function getDirection(ev){
+                var l = warp.offsetLeft;
+                var t = warp.offsetTop;
+                var w = warp.offsetWidth;
+                var h = warp.offsetHeight;
+                // console.log(l,t,w,h)
+                var x = ev.clientX - l - w / 2;
+                var y = ev.clientY - t - h / 2;
+                var d = ((Math.round((Math.atan2(y,x) * (180/Math.PI) + 180) / 90)) + 3) %4;
+                // Math.atan2(y,x) * (180/Math.PI) => 弧度转角度,值的范围-180° ~ 180°
+                // (Math.atan2(y, x) * (180 / Math.PI) + 180) => 值的范围 0 ~ 360°
+                    // Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90)
+                        // (Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90)) + 3)
+                            // ((Math.round((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90)) + 3) % 4
+                                // top         => 45 ~ 135°                 => 1         => 4           => 0
+                                // right       => 135 ~ 225°                => 2         => 5           => 1
+                                // buttom      => 225° ~ 315°               => 3         => 6           => 2
+                                // left        => 315° ~ 360° && 0° ~ 45°   => 0 && 4    => 3 && 7      => 3
+
+                return d;
+            }
+            function move(d){
+                var dir = '';
+                switch (d) {
+                    case 0:
+                        dir = 'top';
+                        itemBox.style.transform = 'rotateX(-90deg)';
+                        break;
+                    case 1:
+                        dir = 'right';
+                        itemBox.style.transform = 'rotateY(-90deg)';
+                        break;
+                    case 2:
+                        dir = 'buttom';
+                        itemBox.style.transform = 'rotateX(90deg)';
+                        break;
+                    case 3:
+                        dir = 'left';
+                        itemBox.style.transform = 'rotateY(90deg)';
+                        break;
+                    case '-0':
+                        dir = '-top';
+                        itemBox.style.transform = 'rotateX(0deg)';
+                        break;
+                    case '-1':
+                        dir = '-right';
+                        itemBox.style.transform = 'rotateY(0deg)';
+                        break;
+                    case '-2':
+                        dir = '-buttom';
+                        itemBox.style.transform = 'rotateX(0deg)';
+                        break;
+                    case '-3':
+                        dir = '-left';
+                        itemBox.style.transform = 'rotateY(0deg)';
+                        break;
+                    
+                }
+                return dir;
+            }
+
+        })()
+    </script>
+</body>
+
+</html>

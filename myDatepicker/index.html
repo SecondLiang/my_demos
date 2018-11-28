@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>my-datepicker</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <!-- title区域的图标 -->
+    <link rel="shortcut icon" href="https://b-ssl.duitang.com/uploads/item/201503/18/20150318165059_VUt4x.jpeg">
+    <style>
+    .self-datepicker-input{
+        width: 300px;
+        height: 40px;
+        font-size: 18px;
+        padding-left:10px; 
+        border: 0;
+        outline: none;
+        border: 1px solid #888; 
+        border-radius: 5px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 300px;
+        left: 300px;
+    }
+    .self-datepicker-input:focus{
+        border-color: blue;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" class="self-datepicker-input" readonly placeholder="点击选择日期">
+
+    <script src="./date.js"></script>
+    <script>
+        datepicker.init('self-datepicker-input');
+    </script>
+</body>
+</html>

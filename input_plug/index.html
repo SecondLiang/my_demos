@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="search.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        /* #search_swiper{
+            width: 600px;
+            height: 36px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="search_container" id="search_swiper">
+        
+    </div>
+    <script src="jquery-pro.js"></script>
+    <script src="search.js"></script>
+    <script>
+        // var Data = [
+        //         { imgUrl: './img/s1.jpg', name: 'tink', lable: '(歌曲)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s2.jpg', name: 'Ain', lable: '(歌曲)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s3.jpg', name: '周杰伦', lable: '(音乐人)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s1.jpg', name: 'sa', lable: '(音乐人)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s2.jpg', name: 'sinny', lable: '(音乐人)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s3.jpg', name: 'ting', lable: '(歌曲)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s1.jpg', name: '王力宏', lable: '(音乐人)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s2.jpg', name: 'kk', lable: '(音乐人)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //         { imgUrl: './img/s3.jpg', name: '王博', lable: '(音乐人)', linkUrl: 'www.baidu', dec: '我是最棒的' },
+        //     ];
+        $('#search_swiper').searchplugIns({
+            iptBoxWidth : 520,              //input输入框的长度  
+            searchBoxHeight : 36,           //整个search（input和按钮）的高度
+            iptPlacehodler : '音乐人、歌曲', //输入框中的提示性文字
+            btnText : 'S',                 //按钮上的字 
+            btnC : 'rgb(179, 176, 176)',   //按钮背景色
+            url : 'https://api.douban.com/v2/music/search',                       //获取资源地址
+            type : 'GET',                      //请求方法
+            dataType : 'jsonp',
+            name1 : 'q=',
+            name2 : '&count=',
+            count : 7,
+            succFn : function(data){
+                var dataArr = data.musics;
+                   var strLi;
+                    if (dataArr) {
+                        $('#search_swiper .hover_list').show();
+                        dataArr.forEach(function (ele, index) {
+                            if ($('#search_swiper input').val() !== '') {
+                                strLi += '<li class="li_list">\
+                                            <a href = '+ ele.mobile_link + '>\
+                                                <div class="info_img">\
+                                                    <img src='+ ele.image + ' alt=" " title="logo">\
+                                                </div>\
+                                                <div class="info_dec">\
+                                                    <p>\
+                                                        <span class="info_span s_name">'+ ele.name + '<i class="lable" >' + ele.lable + '</i ></span >\
+                                                        <span class="info_span s_dec">'+ ele.dec + '</span>\
+                                                    </p >\
+                                                </div>\
+                                            </a>\
+                                        </li >';
+                            } else {
+                                console.log('kong')
+                                strLi = '';
+                                $('#search_swiper .hover_list').hide();
+                            }
+                        });
+                    }
+                $('.search_cot').html(strLi);
+                $('#search_swiper .hover_list .search_cot li').on('mouseenter', function (event) {
+                    $(this).css('backgroundColor','rgb(189, 215, 241)');
+                }).on('mouseleave', function () {
+                    $(this).css('backgroundColor', '#fff');
+                })
+            },
+            errFn : function(){
+                console.log('erro');
+            }
+
+        });
+    </script>
+</body>
+</html>

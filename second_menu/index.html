@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二级菜单</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .warpper{
+            width: 300px;
+            margin: 50px auto;
+        }
+        .warpper > ul{
+            width: 100%;
+        }
+        .warpper > ul > li{
+            width: 100%;
+            height: 36px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 36px;
+            font-weight: bolder;
+            border: 1px solid rgb(73, 70, 70);
+        }
+        .warpper > ul > li.title_list{
+            color:black;
+            background-color:#ccc;
+            cursor: pointer;
+        }
+        .warpper > ul > li.con_list{
+            background-color: rgb(211, 200, 173);
+            color: darkgreen;
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        <ul>
+            <li class="title_list" data = ''>电影</li>
+            <li class="con_list movie_list" data="">《神奇四侠》</li>
+            <li class="con_list movie_list" data="">《动物世界》</li>
+            <li class="con_list movie_list" data="">《红海行动》</li>
+            <li class="con_list movie_list" data="">《战狼》</li>
+            <li class="title_list" data = '2'>音乐</li>
+            <li class="con_list music_list" data="">《红召愿》</li>
+            <li class="con_list music_list" data="">《纸短情长》</li>
+            <li class="con_list music_list" data="">《我的青春》</li>
+            <li class="con_list music_list" data="">《梦中的婚礼》</li>
+            <li class="title_list" data = ''>书籍</li>
+            <li class="con_list books_list" data="">《js设计模式》</li>
+            <li class="con_list books_list" data="">《js模式》</li>
+            <li class="con_list books_list" data="">《js高级编程》</li>
+            <li class="con_list books_list">《你不知道的js》</li>
+            <li class="title_list" data = ''>游戏</li>
+            <li class="con_list play_list" data="">《LOL》</li>
+            <li class="con_list play_list" data="">《吃鸡》</li>
+            <li class="con_list play_list" data="">《魔兽》</li>
+            <li class="con_list play_list" data="">《QQ飞车》</li>
+            <li class="title_list" data = ''>手机</li>
+            <li class="con_list phone_list" data="">《苹果》</li>
+            <li class="con_list phone_list" data="">《华为》</li>
+            <li class="con_list phone_list" data="">《小米》</li>
+            <li class="con_list phone_list" data="">《vivo》</li>
+        </ul>
+    </div>
+    
+
+    <script src="jquery-pro.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

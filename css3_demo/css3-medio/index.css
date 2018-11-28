@@ -1,0 +1,351 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    font-family: '微软雅黑';
+}
+.header{
+    width: 100%;
+    height: 160px;
+}
+.header .top_box{
+    width: 100%;
+    height: 22%;
+    background-color: #333951;
+}
+.header .top_box .con_b{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.header .top_box .con_b .left_c{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header .top_box .con_b .right_c{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.header .top_box .con_b ul{
+    height: 100%;
+}
+.header .top_box .con_b li{
+    float: left;
+    height: 100%;
+}
+.header .top_box .con_b li a{
+    display: inline-block;
+    height: 100%;
+    line-height: 36px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.header .bottom_box{
+    width: 90%;
+    height: 78%;
+    margin: 0 auto;
+    position: relative;
+}
+.header .bottom_box .left_c{
+    width: 12.2%;
+    height: 100%;
+    background: url('./img/logo.jpg')center 15px/100% no-repeat;
+}
+.header .bottom_box .right_c{
+    width: 87.8%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+.header .bottom_box .right_c .form{
+    width: 600px;
+    height: 40px;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 50%;
+    left: 23%;
+    transform: translate3d(0,-50%,0);
+}
+.nav_list_box{
+    width: 100%;
+    height: 60px;
+    background-color: #c92323;
+    
+}
+.nav_list_box .n_con{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+.nav_list_box .n_con ul{
+    width: 100%;
+    height: 100%;
+}
+.nav_list_box .n_con ul li{
+    float: left;
+    height: 100%;
+}
+.nav_list_box .n_con ul li a{
+    display: inline-block;
+    height: 100%;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 20px;
+    transition: transform 0.2s linear;
+}
+.nav_list_box .n_con ul li a:hover{
+    color: #435133;
+    transform: scale(1.5);
+}
+.n_hide_b{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #666;
+    position: relative;
+}
+.n_hide_b .con_b{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+.n_hide_b .con_b .left,
+.n_hide_b .con_b .right
+{
+    display: inline-block;
+    height: 100%;
+    line-height: 36px;
+    color: #fff;
+}
+.n_hide_b .con_b .right{
+    float: right;
+}
+.nav_list_box:hover .hide{
+    display: block;
+}
+.n_hide_b .hide{
+    width: 100%;
+    height: 600%;
+    background-color: #666;
+    display: none;
+    position: absolute;
+    top: 36px;
+    left: 0;
+}
+.n_hide_b .hide ul{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+.n_hide_b .hide ul li{
+    width: 100%;
+    height: 16.6666%;
+}
+.n_hide_b .hide ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 36px;
+    color:#fff;
+}
+.n_hide_b .hide ul li a:hover{
+    color: #435133;
+}
+.banner_box{
+    width: 100%;
+    height: 600px;
+}
+.modle_list{
+    width: 100%;
+    height: 580px;
+    position: relative;
+}
+.modle_list .m_con{
+    width: 80%;
+    height:90%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    font-size: 0;
+}
+.modle_list .m_con .person{
+    display: inline-block;
+    width: 28.7%;
+    height: 100%;
+    padding: 1.7% 2.3%;
+    opacity: 0.6;
+}
+.modle_list .m_con .person:hover{
+    opacity: 1;
+}
+.modle_list .m_con .person img{
+    width: 100%;
+    height: 100%;
+}
+.goods{
+    width: 100%;
+}
+.goods .product_list{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.goods .product_list ul{
+    width: 100%;
+    overflow: hidden;
+}
+.goods .product_list ul li{
+    width: 18%;
+    float: left;
+    padding: 1% 1%;
+}
+.goods .product_list ul li a{
+    display: inline-block;
+    font-size: 0px;
+}
+.goods .product_list ul li a img{
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width:1600px){
+    .modle_list{
+        height: 550px;
+    }
+}
+@media screen and (max-width:1400px){
+    .modle_list{
+        height: 470px;
+    }
+    .goods .product_list ul li{
+        width: 22.5%;
+    }
+}
+@media screen and (max-width:1200px){
+    .modle_list{
+        height: 410px;
+    }
+    .goods .product_list ul li{
+        width: 30%;
+    }
+}
+@media screen and (max-width:1000px){
+    .header{
+        height: 100px;
+    }
+    .header .top_box{
+        height: 30px;
+    }
+    .header .top_box .con_b li a{
+        font-size: 12px;
+        line-height: 30px;
+    }
+    .header .bottom_box .left_c{
+        width: 100px;
+        height: 60px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%,-50%,0);
+    }
+    .header .bottom_box .right_c{
+        display: none;
+    }
+    .nav_list_box{
+        width: 100%;
+        height: 36px;
+    }
+    .nav_list_box .n_con{
+        display: none;
+    }
+    .n_hide_b{
+        display: block;
+        z-index: 2;
+    }
+    .banner_box{
+        height: 500px;
+    }
+    .modle_list{
+        height: 580px;
+    }
+    .modle_list .m_con .person{
+        width: 86.1%;
+    }
+   .modle_list{
+        height: 1565px;
+    }
+    .modle_list .m_con{
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .modle_list .m_con .person{
+        height: 500px;
+    }
+}
+@media screen and (max-width:800px){
+    .banner_box{
+        height: 350px;
+    }
+    .modle_list{
+        height: 1405px;
+    }
+    .modle_list .m_con{
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .modle_list .m_con .person{
+        height: 450px;
+    }
+    .goods .product_list ul li{
+        width: 45%;
+    }
+}
+@media screen and (max-width:400px){
+    .header{
+        height: 80px;
+    }
+    .header .top_box{
+        display: none;
+    }
+    .nav_list_box{
+        width: 100%;
+        height: 30px;
+    }
+    .banner_box{
+        height: 200px;
+    }
+    .modle_list{
+        height: 720px;
+    }
+    .modle_list .m_con{
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .modle_list .m_con .person{
+        height: 230px;
+    }
+    /* .goods .product_list ul li{
+        width: 45%;
+    } */
+}

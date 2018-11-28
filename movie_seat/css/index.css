@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 0;
+}
+.warp{
+    margin: 50px auto;
+    width: 806px;
+}
+.warp .seat_box{
+    position: relative;
+    width: 100%;
+}
+.warp .seat_box ul{
+    width: 100%;
+    padding: 10px;
+}
+.warp .seat_box .seats{
+    display: inline-block;
+    font-size: 0;
+    width: 42px;
+    height: 36px;
+    background: url('../img/seat-lg.png') center center no-repeat;
+    background-size: 100% 100%;
+    margin: 10px;
+}
+.warp .select{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url('../img/hover.png'); 
+}
+.warp .info{
+    width: 100%;
+}
+.warp .info p{
+    font-size: 16px;
+    text-align: center;
+}
+.warp .info p span{
+    font-size: 18px;
+    color: red;
+}
+.warp .seat_box li.seatsed{
+    display: inline-block;
+    font-size: 0;
+    width: 42px;
+    height: 36px;
+    background: url('../img/seat-green-lg.png') center center no-repeat;
+    background-size: 100% 100%;
+    margin: 10px;
+}

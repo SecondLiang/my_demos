@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 0;
+    text-decoration: none;
+}
+#search_swiper{
+    width: 600px;
+    margin: 50px auto;
+}
+#search_swiper .search_form{
+    /* height: 36px; */
+    position: relative;
+}
+#search_swiper .search_form .ipt_box{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    /* width: 520px;   */
+    height: 100%;
+    border: 1px solid gray;
+    border-right-width: 0px;
+    box-sizing: border-box;
+}
+#search_swiper .search_form .ipt_box input{
+    display: inline-block; 
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-width: 0;
+    font-size: 16px;
+    padding-left: 15px;
+}
+#search_swiper .search_form .btn_box{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    width: 80px;   /**/
+    height: 100%;
+    text-align: center;
+}
+#search_swiper .search_form .btn_box > a{
+    display: inline-block;
+    background-color: rgb(37, 83, 182); /**/
+    font-size: 16px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    /* line-height: 36px; */
+    border-radius: 0 5px 5px 0;
+}
+#search_swiper .hover_list{
+    /* width: 520px;   */
+    border: 1px solid #ccc;
+    display: none;
+}
+#search_swiper .hover_list .search_cot{
+    width: 100%;
+}
+#search_swiper .hover_list .search_cot li{
+    position: relative;
+    width: 100%;
+    height: 36px;
+    margin-top: 5px;
+}
+#search_swiper .hover_list .search_cot li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+#search_swiper .hover_list .search_cot li a .info_img{
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    width: 36px;
+    height: 36px;
+}
+#search_swiper .hover_list .search_cot li a .info_img img{
+    width: 100%;
+    height: 100%;
+}
+#search_swiper .hover_list .search_cot li a .info_dec{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /* width: 469px;  520-36-15 = 469 */
+    height: 100%;
+}
+#search_swiper .hover_list .search_cot li a .info_dec p{
+    width: 100%;
+    height: 100%;
+}
+#search_swiper .hover_list .search_cot li a .info_dec > p > .info_span{
+     display: inline-block;
+    height: 100%;
+    line-height: 36px;
+    font-size: 14px;
+    color: #999;
+}
+#search_swiper .hover_list .search_cot li a .info_dec p .s_name{
+   margin-right: 15px;
+   color: rgb(60, 148, 236);
+}   
+#search_swiper .hover_list .search_cot li a .info_dec p .s_name .lable{
+    font-size: 12px;
+}
+#search_swiper .hover_list .search_cot li a .info_dec p .s_dec{
+    
+}

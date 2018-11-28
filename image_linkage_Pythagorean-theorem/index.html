@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>苹果图片联动（勾股定理）</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .warpper{
+            width: 800px;
+            /* border: 1px solid red; */
+            position: fixed;
+            bottom: 50px;
+            text-align:center;
+        }
+        img{
+            width: 60px;
+            height: 60px;
+        }
+        a{  
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img1" src="05.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img2" src="01.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img3" src="02.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img4" src="03.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img5" src="04.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img6" src="05.png" alt="">
+        </a>
+        <a href="javascript:void(0)" class="imgBox">
+            <img class="img7" src="01.png" alt="">
+        </a>
+    </div>
+    <script>
+        (function(){
+            var Oimgs = document.getElementsByTagName('img');
+            var warp = document.getElementsByClassName('warpper')[0]
+            var len = Oimgs.length;
+            bindEvent(Oimgs);
+            function bindEvent(item){
+                document.addEventListener('mousemove',function(e){
+                     function getC(item) {
+                        var x = parseInt(item.offsetLeft) + 60 / 2;     //图标的中心点
+                        var y = parseInt(warp.offsetTop) + 10 + 60 / 2;  //item.offsetTop有问题，所以替换了一下
+                        var a = Math.abs(e.clientX - x);    //得到直角三角形的两条边长
+                        var b = Math.abs(e.clientY - y);
+                        return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));   //已知直角三角形两条边，用勾股定理得出第三边长度
+                    }
+                    for(var i = 0;i < len;i++){
+                        //循环遍历每个图标，得到鼠标位置坐标到中心点距离
+                       var  d = getC(Oimgs[i]); 
+                       d = Math.min(d,200); //在 d和200之间取最小值
+                       var num = (200 - d)/200 * 60 + 60;  //放大比例 *60(放大多少像素) + 60(放大到多少像素) 
+                       Oimgs[i].style.width = num + 'px';
+                       Oimgs[i].style.height = num + 'px';
+                    }
+                })
+            }
+           
+
+        })()
+        
+    </script>
+</body>
+</html>

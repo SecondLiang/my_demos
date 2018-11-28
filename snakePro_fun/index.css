@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    background-color: #F8F8FF;
+}
+
+.warpper {
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-image: url(img/timg.jpg);
+}
+
+.content {
+    list-style: none;
+    width: 900px;
+    height: 900px;
+    box-sizing: border-box;
+    display:block;
+}
+
+.content li {
+    width: 30px;
+    height: 30px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-color:#808000;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bolder;
+    line-height: 30px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+div.head {
+    background-color: red;
+    z-index: 10;
+}
+
+.grade{
+    position: fixed;
+    left: 50%;
+    top: 25%;
+    margin-left: -300px;
+    width: 600px;
+    height: 400px;
+    background-color: royalblue;
+    border-radius: 10px;
+    display:block;
+    
+}
+p{
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+}
+input[name = 'grades']{
+    display: inline-block;
+    margin:0 10px 0 50px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+button{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #FFF;
+    background-color: red;
+}
+.grade .stop_btn{
+    width: 100%;
+    height: 100px;
+    margin: 45px 0px;
+}
+.grade .stop_btn p{
+    color: #FFF;
+    font-size: 22px;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        html,
+        body,
+        .warp {
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            width: 80%;
+            height: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            transform-style: preserve-3d;
+            perspective: 1200px;
+        }
+        .content .item {
+            height: 100%;
+            width: 16%;
+            background-color: #999;
+            border-radius: 20px;
+            transition: height 0.5s linear, width 0.5s linear;
+            overflow: hidden;
+        }
+        .content .item:nth-of-type(1){
+            transform: rotate3d(0,1,0,45deg);
+        }
+        .content .item:nth-of-type(2){
+            transform: rotate3d(0,1,0,-45deg);
+        }
+        .content .item:nth-of-type(3){
+            transform: rotate3d(0,1,0,45deg);
+        }
+        .content .item:nth-of-type(4){
+            transform: rotate3d(0,1,0,-45deg);
+        }
+        .content .item:nth-of-type(5){
+            transform: rotate3d(0,1,0,45deg);
+        }
+        .content .item:nth-of-type(6){
+            transform: rotate3d(0,1,0,-45deg);
+        }
+
+        .item .info {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s linear;
+        }
+
+        .item:nth-of-type(1) .info {
+            transition-delay: 0.1s;
+        }
+
+        .item:nth-of-type(2) .info {
+            transition-delay: 0.2s;
+        }
+
+        .item:nth-of-type(3) .info {
+            transition-delay: 0.3s;
+        }
+
+        .item:nth-of-type(4) .info {
+            transition-delay: 0.4s;
+        }
+
+        .item:nth-of-type(5) .info {
+            transition-delay: 0.5s;
+        }
+
+        .item:nth-of-type(6) .info {
+            transition-delay: 0.6s;
+        }
+
+        .init .item .info {
+            transform: translate3d(0, 100%, 0);
+        }
+
+        .item .info .imgbox {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+        }
+
+        .item:hover .info .imgbox {
+            opacity: 1;
+        }
+        .item:hover .info .title {
+            opacity: 0;
+        }
+        .item:nth-of-type(1) .info .imgbox {
+            background-image: url('./img/p1.jpg');
+        }
+
+        .item:nth-of-type(2) .info .imgbox {
+            background-image: url('./img/p2.jpg');
+        }
+
+        .item:nth-of-type(3) .info .imgbox {
+            background-image: url('./img/p3.jpg');
+        }
+
+        .item:nth-of-type(4) .info .imgbox {
+            background-image: url('./img/p4.jpg');
+        }
+
+        .item:nth-of-type(5) .info .imgbox {
+            background-image: url('./img/p5.jpg');
+        }
+
+        .item:nth-of-type(6) .info .imgbox {
+            background-image: url('./img/p6.jpg');
+        }
+
+        .item .info .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="warp init">
+        <ul class="content">
+            <li class="item">
+                <div class="info">
+                    <div class="imgbox">
+                    </div>
+                    <div class="title">唯美</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="info">
+                    <div class="imgbox">
+                    </div>
+                    <div class="title">唯美</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="info">
+                    <div class="imgbox">
+                    </div>
+                    <div class="title">唯美</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="info">
+                    <div class="imgbox">
+                    </div>
+                    <div class="title">唯美</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="info">
+                    <div class="imgbox">
+                    </div>
+                    <div class="title">唯美</div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="info">
+                    <div class="imgbox">
+                    </div>
+                    <div class="title">唯美</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="jquery-pro.js"></script>
+    <script>
+        var $warp = $('.warp');
+        var $close = $('.close');
+        setTimeout(function () {
+            $warp.removeClass('init');
+        }, 200)
+        
+        $('.item').hover(
+            function(){
+
+                $(this).css('width','100%');
+            },
+            function(){
+                $(this).css('width', '16%');
+            })
+    </script>
+</body>
+
+</html>

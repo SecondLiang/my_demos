@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .warp {
+            perspective: 600px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .cube {
+            transform-style: preserve-3d;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            /* transform-origin: center center 100px; */
+            /* animation: move 6s linear infinite; */
+        }
+
+        .cube .item {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+        }
+
+        .item1 {
+            background-color: deeppink;
+            transform: rotate3d(0, 1, 0, 0deg) translate3d(0, 0, 100px);
+        }
+
+        .item2 {
+            background-color: rgb(248, 5, 25);
+            transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 100px);
+        }
+
+        .item3 {
+            background-color: rgb(49, 70, 165);
+            transform: rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 100px);
+        }
+
+        .item4 {
+            background-color: rgb(48, 44, 10);
+            transform: rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 100px);
+        }
+
+        .item5 {
+            background-color: rgb(236, 219, 61);
+            transform: rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 100px);
+        }
+
+        .item6 {
+            background-color: green;
+            transform: rotate3d(1, 0, 0, 180deg) translate3d(0, 0, 100px);
+        }
+
+        @keyframes move {
+            0% {
+                transform: rotate3d(1, 0, 0, 0deg);
+            }
+            50% {
+                transform: rotate3d(1, 0, 0, -720deg);
+            }
+            50.0001% {
+                transform: rotate3d(0, 1, 0, 0deg);
+            }
+            100% {
+                transform: rotate3d(0, 1, 0, 720deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="warp">
+        <div class="cube">
+            <div class="item item1">1</div>
+            <div class="item item2">2</div>
+            <div class="item item3">3</div>
+            <div class="item item4">4</div>
+            <div class="item item5">5</div>
+            <div class="item item6">6</div>
+        </div>
+    </div>
+    <script>
+
+        //考试题：
+        function selectNum(str) {
+            var arr = [];
+            var len = str.length;
+            var item = '';
+            for (var i = 0; i < len; i++) {
+                if (+str[i] + '' !== 'NaN') {
+                    item += +str[i];
+                    if(+str[i+1] + '' == 'NaN'){
+                        arr.push(+item);
+                        item = '';
+                    }
+                }
+            }
+            console.log(arr);
+        }    
+            var str = 'asdkhsdf4531asdhkh45knkshd02jkl78';
+            // selectNum(str);
+
+            var p1 = { name: '邓哥' }
+                var p2 = p1
+                p1.name = p1 = { age: 60 }
+                // console.log(p1,p2)
+    </script>
+</body>
+
+</html>

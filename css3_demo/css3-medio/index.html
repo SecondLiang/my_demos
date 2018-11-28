@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./search/search.css">
+    <link rel="stylesheet" href="./silder/silder.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="top_box">
+            <div class="con_b">
+                <div class="left_c">
+                    <ul>
+                        <li>
+                            <a href="">7458110</a>
+                        </li>
+                        <li>
+                            <a href="">假的请勿购买</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right_c">
+                    <ul>
+                        <li>
+                            <a href="">登陆</a>
+                        </li>
+                        <li>
+                            <a href="">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_box">
+            <div class="left_c"></div>
+            <div class="right_c">
+                <div id="search_swiper" class="form">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav" class="nav_list_box">
+        <div class="n_con">
+            <ul>
+                <li>
+                    <a href="">首页</a>
+                </li>
+                <li>
+                    <a href="">关于我们</a>
+                </li>
+                <li>
+                    <a href="">产品商城</a>
+                </li>
+                <li>
+                    <a href="">新闻资讯</a>
+                </li>
+                <li>
+                    <a href="">推荐提成</a>
+                </li>
+                <li>
+                    <a href="">在线预约</a>
+                </li>
+                <li>
+                    <a href="">招商加盟</a>
+                </li>
+            </ul>
+        </div>
+        <div class="n_hide_b">
+            <div class="con_b">
+                <a class="left" href="">首页</a>
+                <a class="right" href="">更多</a>
+            </div>
+            <div class="hide">
+                <ul>
+                    <li>
+                        <a href="">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="">产品商城</a>
+                    </li>
+                    <li>
+                        <a href="">新闻资讯</a>
+                    </li>
+                    <li>
+                        <a href="">推荐提成</a>
+                    </li>
+                    <li>
+                        <a href="">在线预约</a>
+                    </li>
+                    <li>
+                        <a href="">招商加盟</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="silder" class="banner_box">
+
+    </div>
+    <div class="modle_list">
+        <div class="m_con">
+            <div class="person per1">
+                <img src="./img/f1.jpg" alt="">
+            </div>
+            <div class="person per1">
+                <img src="./img/f1.jpg" alt="">
+            </div>
+            <div class="person per1">
+                <img src="./img/f1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="goods">
+        <div class="product_list">
+            <ul>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l2.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l2.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l2.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l2.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l2.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l2.jpg" alt=""></a></li>
+                <li><a href="javascript:void(0)"><img src="./img/l1.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="./silder/jquery-pro.js"></script>
+    <script src="./search/search.js"></script>
+    <script src="./silder/silder.js"></script>
+    <script>
+
+        $('#silder').silderImg({
+            imgArr: ['./img/b1.jpg', './img/b2.jpg', './img/b1.jpg']
+        });
+        var Data = [];
+        $('#search_swiper').searchplugIns({
+            searchData: Data,
+            iptBoxWidth: 520,
+            btnBoxwidth: 80,
+            searchBoxHeight: 40,
+            iptPlacehodler: '搜索',
+            btnText: 'S',
+            btnB: 'rgb(179, 176, 176)'
+        })
+    </script>
+</body>
+
+</html>

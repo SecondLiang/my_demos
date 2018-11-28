@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .warp{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            perspective: 600px;
+            margin: 300px auto;
+            border: 1px solid black;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transform-style: preserve-3d;
+            font-size: 26px;
+            color: #fff;
+            animation: move 5s linear infinite;
+        }
+        .box > div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.5;
+            text-align: center;
+            line-height: 200px;
+        }
+        .item1{
+            background-color: red;
+            transform: translate3d(0,0,100px);
+        }   
+        .item2{
+            background-color: green;
+            transform: rotate3d(1,0,0,90deg) translate3d(0,0,100px);
+        }
+        .item3{
+            background-color: blue;
+            transform: rotate3d(1,0,0,-90deg) translate3d(0,0,100px);
+        }
+        .item4{
+            background-color: deeppink;
+            transform: rotate3d(1,0,0,180deg) translate3d(0,0,100px);
+        }
+        .item5{
+            background-color: darkseagreen;
+            transform: rotate3d(0,1,0,90deg) translate3d(0,0,100px);
+        }
+        .item6{
+            background-color: orange;
+            transform: rotate3d(0,1,0,-90deg) translate3d(0,0,100px);
+        }
+        @keyframes move{
+            0%{
+                transform: rotate3d(1,1,1,0deg);
+                /* transform: rotateX(0) rotateY(0) rotateZ(0); */
+            }
+            100%{
+                transform: rotate3d(1,1,1,360deg);
+                /* transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); */
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="warp">
+        <div class="box">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+        </div>
+   </div>
+</body>
+</html>

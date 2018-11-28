@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .warp{
+            width: 300px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            margin: 200px auto;
+            /* transform: rotate3d(1,0,0,-20deg); */
+            animation: move 10s linear infinite paused;
+        }
+        .warp > div{
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 背景隐藏 */
+            /* backface-visibility:hidden; */
+            box-shadow: 0 10px 30px 20px #999;
+        }
+        .item6{
+            transform: rotate3d(0,1,0,0deg) translate3d(0,0,300px);
+        }
+        .item1{
+            transform: rotate3d(0,1,0,60deg) translate3d(0,0,300px);
+        }
+        .item2{
+            transform: rotate3d(0,1,0,120deg) translate3d(0,0,300px);
+        }
+        .item3{
+            transform: rotate3d(0,1,0,180deg) translate3d(0,0,300px);
+        }
+        .item4{
+            transform: rotate3d(0,1,0,240deg) translate3d(0,0,300px);
+        }
+        .item5{
+            transform: rotate3d(0,1,0,300deg) translate3d(0,0,300px);
+        }
+        .warp > div >img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            /* opacity: 0.5; */
+        }
+        .warp > div > .bg{
+            width:300px;
+            height: 200px;
+            background-color: rgba(22, 1, 1, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            /* backface-visibility:hidden; */
+        }
+        @keyframes move{
+            0%{
+                transform:rotate3d(1,0,0,-10deg) rotate3d(0,1,0,0deg);
+            }
+            100%{
+                transform:rotate3d(1,0,0,-10deg) rotate3d(0,1,0,360deg);
+            }
+        }
+        .warp:hover{
+            animation: move 10s linear infinite running;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="item1">
+            <img src="./img/01.jpg" alt="">
+            <!-- 图片的背面 -->
+            <div class="bg"></div>
+        </div>
+        <div class="item2">
+            <img src="./img/02.jpg" alt="">
+            <div class="bg"></div>
+        </div>
+        <div class="item3">
+            <img src="./img/03.jpg" alt="">
+            <div class="bg"></div>
+        </div>
+        <div class="item4">
+            <img src="./img/04.jpg" alt="">
+            <div class="bg"></div>
+        </div>
+        <div class="item5">
+            <img src="./img/05.jpg" alt="">
+            <div class="bg"></div>
+        </div>
+        <div class="item6">
+            <img src="./img/06.jpg" alt="">
+            <div class="bg"></div>
+        </div>
+    </div>
+</body>
+</html>
